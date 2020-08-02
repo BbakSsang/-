@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+
+    <style>
+        a:link {
+            text-decoration: none;
+            color: #333333;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #333333;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: #333333;
+        }
+
+        .container {
+            cursor: pointer;
+        }
+
+        .p1 {
+            font-size: small;
+            font-weight: bold;
+
+        }
+
+        .nav1 {
+            text-align: center;
+            background-color: #F8F9FA;
+            position: fixed;
+            bottom: 1px;
+            left: 0%;
+            width: 100%;
+            ;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="{%url 'index'%}">
+            <h3 class="mt-4 mb-3" style="text-align: center; font-weight:bold;">Blog</h3>
+        </a>
+    </div>
+
+
+
+    <div class="container">
+        <select class="form-control form-control-sm col-2">
+            <option value="1">Django</option>
+            <option value="2">Python</option>
+            <option value="3">html/css</option>
+            <option value="4">Js/Jquery</option>
+        </select>
+        <br>
+        <br>
+    </div>
+
+    <div class="container mt-0">
+        <form action="/renew/{{x.id}}" method="GET">
+
+            <input type="text" name="name" value="{{x.name}}" style="width: 100%; border:none;">
+            <hr class="mb-0">
+
+            <textarea class="container-fluid mt-3" cols="30" rows="10" name="text"
+            style="width: 100%; border:none;">{{x.text}}</textarea>
+
+            <div class="contianer-fluid nav1">
+                <input type="submit" class="btn btn-dark rounded-pill pr-4 pl-4 mt-3 mb-3" value="완료">
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>
